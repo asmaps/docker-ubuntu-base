@@ -15,7 +15,7 @@ RUN apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 RUN easy_install3 -U "pip<8.0"
-RUN pip3 install psycopg2 lxml Pillow pandas wheel
+RUN pip3 install psycopg2 Pillow
 
 ONBUILD ADD requirements.txt /opt/code/requirements.txt
 ONBUILD WORKDIR /opt/code
