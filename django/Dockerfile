@@ -1,7 +1,7 @@
 FROM asmaps/ubuntu
 MAINTAINER asmaps
 
-RUN apt-get install -y \
+RUN apt-get update && apt-get install -y \
     lib32z1-dev \
     libfreetype6-dev \
     libjpeg8-dev \
