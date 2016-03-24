@@ -16,7 +16,10 @@ RUN apt-get install -y \
 
 RUN easy_install3 -U "pip<8.0"
 RUN pip3 install psycopg2 Pillow
+RUN mkdir /opt/ssh
 
+ONBUILD ADD id_pip_deploy /root/.ssh/id_pip_deploy
+ONBUILD ADD ssh_config /root/.ssh/config
 ONBUILD ADD requirements.txt /opt/code/requirements.txt
 ONBUILD WORKDIR /opt/code
 ONBUILD RUN pip3 install -Ur requirements.txt
